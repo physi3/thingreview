@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.shortcuts import redirect, render
 
-# from random import randint
+from random import randint
 
 from . import models
 from . import forms
@@ -93,6 +93,5 @@ def review(request, **kwargs):
 
 def random(request):
     count = models.Thing.objects.count()
-    _thing = models.Thing.objects.all()[0].id
-    
+    _thing = models.Thing.objects.all()[randint(0, count-1)].id
     return redirect('things:thing', _thing)
