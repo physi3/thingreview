@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %}Thing Review{% endblock %}
+{% block body %}
+    <ul>
+        <li><p><a href="{% url 'things:search' %}">Search</a></p></li>
+        <li><p><a href="{% url 'things:things' %}">Things</a></p></li>
+        <li><p><a href="{% url 'things:random' %}">Random thing</a></p></li>
+    </ul>
+{% endblock %}

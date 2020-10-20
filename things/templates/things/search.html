@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block header %}Thing Search{% endblock %}
+{% block body %}
+    <form method="GET" class="search">
+        <input type="text" name="search">
+        <input type="submit" value="Search">
+    </form>
+    
+    {% block results %}
+        {% if search %}
+            <h3>Search results for "{{ search }}"</h3>
+            <ul>
+            {% for result in results %}
+                <li>
+                    <div class="thing">
+                        <button class="thing-button" onclick="thingContent(this)" title="Open/Close">{{ result.name }}</button>
+                        <div class="thing-content">
+                            <a href="{% url 'things:thing' result.id %}">thing page</a>
+                            <p>
+                            {% if result.rating != None %}
+                                {{ result.rating }}/5 ({{ result.review_set.count }} review{{ result.review_set.count|pluralize }})
+                            {% else %}
+                                No reviews yet.
+                            {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            {% empty %}
+                <p>No results :(</p>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endblock %}
+{% endblock %}

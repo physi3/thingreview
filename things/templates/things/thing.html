@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ thing.name }}{% endblock %}
+{% block header %}{{ thing.name }}{% endblock %}
+
+{% block body %}
+    {% if thing.rating != None %}
+        <small>This thing has an average rating of <strong>{{ thing.rating }}</strong></small>
+    {% endif %}
+    <h3>About</h3>
+    <p>{{ thing.description }}</p>
+    <h3>Reviews</h3>
+    {% if reviews %}
+        <p>This has {{ reviews|length }} review{{ reviews|pluralize }}. <a href="{% url 'things:review' thing.id %}">Write another.</a></p>
+        <div class="reviews">
+        {% for review in reviews %}
+            <div class="review">
+                <p>{{ review.content }}</p>
+                <span class="rating">{{ review.rating }}/5</span>
+                <span class="stamp">- {{ review.author|default:"anonymous" }}, {{ review.date|date:"d M Y" }}</span>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p>There are not any reviews yet. <a href="{% url 'things:review' thing.id %}">Why not write one?</a></p>
+    {% endif %}
+{% endblock %}
