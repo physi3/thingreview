@@ -8,7 +8,6 @@ from . import forms
 
 
 def index(request):
-    print('index view function')
     return render(request, 'things/index.html')
 
 
@@ -74,7 +73,7 @@ def review(request, **kwargs):
             form = forms.ReviewForm(request.POST)
             if form.is_valid():
                 # Create new review.
-                # Is rating lgt than 5?
+                # Is rating 0-5?
                 _review = models.Review()
                 _review.thing = _thing
                 _review.content = form.cleaned_data['content']
