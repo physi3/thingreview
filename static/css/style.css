@@ -1,3 +1,8 @@
+html {
+    margin: 0;
+    min-width: 100%;
+}
+
 body {
     --indigo-dye: #134074ff;
     --prussian-blue: #13315cff;
