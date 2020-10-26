@@ -36,7 +36,7 @@ class Review(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     def __repr__(self):
-        return f'<Review {self.thing.name}@{self.date}>'
+        return f'<Review thing="{self.thing.name}"@{self.date}>'
     __str__ = __repr__
 
     def save(self, *args, **kwargs):
