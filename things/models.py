@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from decimal import Decimal, ROUND_HALF_UP
 
 class Thing(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -17,8 +18,10 @@ class Thing(models.Model):
     )
 
     def get_rating(self):
+        if self.review_set.count() == 0:
+            return None
         ratings = [r.rating for r in self.review_set.all()]
-        return round(sum(ratings) / len(ratings), 2)
+        return Decimal(sum(ratings) / len(ratings)).quantize(Decimal('0.0'), ROUND_HALF_UP)
 
     def __repr__(self):
         return f'<Thing name="{self.name}">'

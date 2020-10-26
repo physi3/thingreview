@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.utils import timezone
 
+from decimal import Decimal
+
 from .models import Thing, Review
 
 
@@ -29,7 +31,7 @@ class ThingModelTests(TestCase):
         # Test: get_rating returns average of child reviews (1 d.p)
         potato.review_set.create(content='a', rating=2)
         potato.review_set.create(content='b', rating=2.5)
-        self.assertEqual(potato.get_rating(), 2.3)
+        self.assertEqual(potato.get_rating(), Decimal('2.3'))
 
 
 class ReviewModelTests(TestCase):
