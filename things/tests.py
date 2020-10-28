@@ -33,6 +33,13 @@ class ThingModelTests(TestCase):
         potato.review_set.create(content='b', rating=2.5)
         self.assertEqual(potato.get_rating(), Decimal('2.3'))
 
+    def test_name_capitalized(self):
+        global potato
+        # Test: name attribute is capitalized
+        potato.name = 'potato'
+        potato.save()
+        self.assertEqual(potato.name, 'Potato')
+
 
 class ReviewModelTests(TestCase):
     potato = None
