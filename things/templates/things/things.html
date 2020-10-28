@@ -5,19 +5,27 @@
     <small>Why not <a href="{% url 'things:make_thing' %}">make a new thing?</a></small>
     <p>There are {{ things|length }} things. You can search them <a href="{% url 'things:search' %}">here</a>.</p>
     <p>Here they are:</p>
-    {% for thing in things %}
-        <div class="thing">
-            <button class="thing-button" onclick="thingContent(this)" title="Open/Close">{{ thing.name }}</button>
-            <div class="thing-content">
-                <a href="{% url 'things:thing' thing.id %}">thing page</a>
-                <p>
-                {% if thing.rating != None %}
-                    {{ thing.rating }}/5 ({{ thing.review_set.count }} review{{ thing.review_set.count|pluralize }})
-                {% else %}
-                    No reviews yet.
-                {% endif %}
-                </p>
+    <div class="thing-container">
+        {% regroup things|dictsort:"name" by name.0 as letter_list %}
+        {% for letter in letter_list %}
+            <h2>{{ letter.grouper }}</h2>
+            <div class="thing-letter-container">
+                {% for thing in letter.list %}
+                    <div class="thing">
+                        <button class="thing-button" onclick="thingContent(this)" title="Open/Close">{{ thing.name }}</button>
+                        <div class="thing-content">
+                            <a href="{% url 'things:thing' thing.id %}">thing page</a>
+                            <p>
+                            {% if thing.rating != None %}
+                                {{ thing.rating }}/5 ({{ thing.review_set.count }} review{{ thing.review_set.count|pluralize }})
+                            {% else %}
+                                No reviews yet.
+                            {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 {% endblock %}

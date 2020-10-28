@@ -66,6 +66,16 @@ ul {
     border: 0.2em solid;
 }
 
+.thing-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.thing-letter-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .reviews {
     display: grid;
     grid-column-gap: 1em;
