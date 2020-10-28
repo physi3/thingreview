@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --noinput; gunicorn thingreview.wsgi
+web: make collectstatic; gunicorn thingreview.wsgi
