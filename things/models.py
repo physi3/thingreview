@@ -27,6 +27,12 @@ class Thing(models.Model):
         return f'<Thing name="{self.name}">'
     __str__ = __repr__
 
+    def save(self, *args, **kwargs):
+        # Capitalize name field.
+        self.name = self.name.capitalize()
+
+        super().save(*args, **kwargs)
+
 
 class Review(models.Model):
     thing = models.ForeignKey(Thing, on_delete=models.CASCADE)
