@@ -3,7 +3,7 @@ from django.utils import timezone
 
 from decimal import Decimal
 
-from .models import Thing, Review
+from things.models import Thing, Review
 
 
 potato_description = 'A root vegetable first domesticated by native americans.'
