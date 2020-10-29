@@ -11,7 +11,7 @@ PS> git clone https://github.com/ollydevulder/thingreview.git
 2. Create a virtual environment for python and start it.
 ```ps
 PS> python -m venv venv
-PS> venv/Scripts/Activate.ps1
+PS> .\venv\Scripts\Activate.ps1
 (venv) PS>
 ```
 
