@@ -92,5 +92,8 @@ def review(request, **kwargs):
 
 def random(request):
     count = models.Thing.objects.count()
-    _thing = models.Thing.objects.all()[randint(0, count-1)].id
-    return redirect('things:thing', _thing)
+    if count:
+        _thing = models.Thing.objects.all()[randint(0, count-1)].id
+        return redirect('things:thing', _thing)
+    else:
+        return redirect('things:index')
