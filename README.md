@@ -18,13 +18,17 @@ $ source venv/bin/activate
 ```bash
 (venv) $ make install
 ```
-4. Create superuser
+4. Migrate database
+```bash
+(venv) $ make migrate
+```
+5. Create superuser
 ```bash
 (venv) $ make superuser
 ```
-5. Run the development server
+6. Run the development server
 ```bash
 (venv) $ make
 ```
 
-If you are using windows, sorry.
+>If you are using windows, sorry.
