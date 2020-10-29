@@ -26,9 +26,9 @@ $ source venv/bin/activate
 ```bash
 (venv) $ make superuser
 ```
-6. Run the development server
+6. Test and run the development server :sparkles:
 ```bash
 (venv) $ make
 ```
 
->If you are using windows, sorry.
+If you are using windows, follow [this guide](WIN_SETUP.md).
