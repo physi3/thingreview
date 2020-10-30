@@ -42,8 +42,9 @@ ul {
     justify-content: space-between;
 }
 
-.header-items {
+#header-items {
     display: flex; 
+    flex-direction: row;
     justify-content: flex-end;
 }
 
@@ -70,7 +71,7 @@ ul {
   }
 
 .header h1 {
-    margin: 0%;
+    margin: 0;
     padding: 0.4em;
     color: var(--off-white);
 
@@ -79,11 +80,18 @@ ul {
 }
 
 @media screen and (max-width: 500px) {
-    .header a, .header-items, .header {
-      float: none;
-      display: block;
+    .header h1 {
+        cursor: pointer;
     }
-  }
+
+    .header, #header-items {
+        flex-direction: column;
+    }
+
+    #header-items {
+        display: none;
+    }
+}
 
 .content {
     padding: 0.7em;
