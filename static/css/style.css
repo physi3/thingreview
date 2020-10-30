@@ -9,7 +9,7 @@ body {
 
     background-color: var(--mint-cream);
     color: var(--indigo-dye);
-    margin: 0em;
+    margin: 0;
 }
 
 h1, h2, h3 {
@@ -20,14 +20,12 @@ h1, h2, h3 {
 }
 
 a {
-    box-shadow: #333;
-    color:  var(--oxford-blue);
-    background-color: transparent ;
+    color: var(--oxford-blue);
+    background-color: transparent;
 }
 
 a:hover, a:focus {
     color: var(--prussian-blue);
-
 }
 
 ul {
@@ -35,7 +33,7 @@ ul {
 }
 
 .header {
-    margin: 0em;
+    margin: 0;
     display: flex;
 
     background-color: var(--dark-grey);
@@ -51,15 +49,13 @@ ul {
 
 .header a {
     margin: 0;
-
-    float: left;
-    color: var(--off-white);
-    text-align: center;
     padding: 1.5em 1.2em;
-    text-decoration: none;
-    font-size: 17px;
-
     border: none;
+    
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    color: var(--off-white);
 }
 
 
@@ -93,7 +89,7 @@ ul {
     padding: 0.7em;
 }
 
-.thing{
+.thing {
     width: max-content;
     background-color: white;
     margin: 1em;
@@ -153,7 +149,7 @@ form {
 }
 
 form input {
-    align-text: left;
+    text-align: left;
     width: auto;
 }
 
