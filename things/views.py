@@ -97,3 +97,12 @@ def random(request):
         return redirect('things:thing', _thing)
     else:
         return redirect('things:index')
+
+def latest(request):
+    count = models.Thing.objects.count()
+    _thing = None
+    if count:
+        _thing = models.Thing.objects.all()[count-1].id
+        return redirect('things:thing', _thing)
+    else:
+        return redirect('things:index')

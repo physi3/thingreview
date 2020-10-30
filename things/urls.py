@@ -12,4 +12,5 @@ urlpatterns = [
     path('things/thing/', views.make_thing, name='make_thing'),
     path('search/', views.search, name='search'),
     path('random/', views.random, name='random'),
+    path('latest/', views.latest, name='latest'),
 ]
