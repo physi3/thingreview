@@ -15,8 +15,16 @@
 <body>
     <div class="header">
         <h1>{% block header %}{% endblock %}</h1>
-        <a href="{% url 'things:index' %}">home</a>
+        <div class="header-items">
+            <a href="{% url 'things:index' %}">Home</a>
+            <a href="{% url 'things:things' %}">View All</a>
+            <a href="{% url 'things:make_thing' %}">Create</a>
+            <a href="{% url 'things:search' %}">Search</a>
+            <p></p>
+        </div>
     </div>
+    <div class="content">
     {% block body %}{% endblock %}
+    </div>
 </body>
 </html>
