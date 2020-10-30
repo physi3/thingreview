@@ -3,7 +3,7 @@
 {% block header %}things{% endblock %}
 {% block body %}
     <small>Why not <a href="{% url 'things:make_thing' %}">make a new thing?</a></small>
-    <p>There are {{ things|length }} things. You can search them <a href="{% url 'things:search' %}">here</a>.</p>
+    <p>There are {{ things|length }} <i>things</i>. You can search them <a href="{% url 'things:search' %}">here</a>.</p>
     <p>Here they are:</p>
     <div class="thing-container">
         {% regroup things|dictsort:"name" by name.0 as letter_list %}

@@ -2,9 +2,11 @@
 
 {% block header %}Thing Review{% endblock %}
 {% block body %}
-    <p>Welcome to thing review. Here you can give your opinion on things. (review them)</p>
+    <p>Welcome to <i>thing</i> review. Here you can give your opinion on <i>things</i>. (review them)</p>
+    <p><br>Here are some cool little ways to discover a new <i>thing</i>.</p>
     <ul>
         <li><p><a href="{% url 'things:random' %}">Random thing</a></p></li>
+        <li><p><a href="{% url 'things:latest' %}">Most recently created thing</a></p></li>
     </ul>
     <small class="bottom"><a href="https://github.com/ollydevulder/thingreview" target="_blank">Have a looksie at the code.</a></small>
 {% endblock %}
