@@ -1,4 +1,4 @@
-from django.db.models import Q
+from django.db.models import Count, Q
 from django.shortcuts import redirect, render
 
 from random import randint
@@ -103,5 +103,13 @@ def latest(request):
     if count:
         _thing = models.Thing.objects.all()[count-1].id
         return redirect('things:thing', _thing)
+    else:
+        return redirect('things:index')
+
+def least_reviewed(request):
+    count = models.Thing.objects.count()
+    if count:
+        _thing = models.Thing.objects.annotate(num_reviews=Count('review')).order_by('num_reviews').first()
+        return redirect('things:thing', _thing.id)
     else:
         return redirect('things:index')
