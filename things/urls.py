@@ -13,4 +13,5 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('random/', views.random, name='random'),
     path('latest/', views.latest, name='latest'),
+    path('least_reviewed/', views.least_reviewed, name='least_reviewed'),
 ]
