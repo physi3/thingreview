@@ -28,7 +28,12 @@ PS> .\venv\Scripts\Activate.ps1
 (venv) PS> python .\manage.py createsuperuser
 ```
 
-5. Test and run development server.
+5. Collect static files.
+```ps
+(venv) PS> python .\manage.py collectstatic [--noinput]
+```
+
+6. Test and run development server.
 ```ps
 (venv) PS> python .\manage.py test
 (venv) PS> python .\manage.py runserver
