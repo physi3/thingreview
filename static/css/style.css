@@ -79,6 +79,10 @@ ul {
     text-align: center;
 }
 
+#drop-down-icon {
+    display: none;
+}
+
 @media screen and (max-width: 500px) {
     .header h1 {
         cursor: pointer;
@@ -90,6 +94,11 @@ ul {
 
     #header-items {
         display: none;
+    }
+
+    #drop-down-icon {
+        display: inline-table;
+        padding-left: 0.4em;
     }
 }
 
