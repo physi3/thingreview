@@ -1,8 +1,8 @@
 # Thing Review
 
-An idea by me (@ollydevulder).
+An idea by me ([@ollydevulder](https://github.com/ollydevulder)).
 
-With help from me (@physi3)
+With help from me ([@physi3](https://github.com/physi3))
 
 Hosted by heroku at [thingreview.xyz](https://thingreview.xyz).
 
