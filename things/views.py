@@ -101,8 +101,8 @@ def random(request):
 def latest(request):
     count = models.Thing.objects.count()
     if count:
-        _thing = models.Thing.objects.all()[count-1].id
-        return redirect('things:thing', _thing)
+        _thing = models.Thing.objects.order_by('-date').first()
+        return redirect('things:thing', _thing.id)
     else:
         return redirect('things:index')
 
