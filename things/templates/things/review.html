@@ -2,10 +2,16 @@
 
 {% block header %}Write a Review{% endblock %}
 {% block body %}
-    <p>Content and rating are required. Rating must be between 0 and 5.</p>
+    <p><b>Note:</b> rating is out of 5.</p>
     <form method="POST">
         {% csrf_token %}
-        {{ form }}
+        {% for field in form %}
+            <div class="field">
+                <label>{{ field.label }}</label><br>
+                {{ field }}
+                {{ field.errors }}
+            </div>
+        {% endfor %}
         <input type="submit" value="Publish">
     </form>
 {% endblock %}
