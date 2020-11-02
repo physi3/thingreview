@@ -198,9 +198,28 @@ form {
     flex-direction: column;
 }
 
-form input {
-    width: auto;
-    text-align: left;
+form input[type=submit] {
+    margin: 0.5em;
+    padding: 0.5em;
+    width: max-content;
+}
+
+form .field {
+    margin: 0.5em;
+    padding: 0.5em;
+    width: max-content;
+}
+
+form .field input {
+    border: 0;
+}
+
+form .errorlist {
+    list-style-type: none;
+
+    font-size: 0.75em;
+
+    color: red;
 }
 
 .search {
