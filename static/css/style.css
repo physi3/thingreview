@@ -42,6 +42,18 @@ ul {
     justify-content: space-between;
 }
 
+.header-top {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+}
+
+#dropdown-icon {
+    display: none;
+    height: 2em;
+    width: 2em;
+}
+
 #header-items {
     display: flex; 
     flex-direction: row;
@@ -71,22 +83,27 @@ ul {
   }
 
 .header h1 {
-    margin: 0;
-    padding: 0.4em;
-    color: var(--off-white);
-
     margin: auto 0;
-    text-align: center;
+    padding: 0.4em;
+    font-size: 2em;
+    color: var(--off-white);
 }
 
 @media screen and (max-width: 500px) {
-    .header h1 {
-        cursor: pointer;
-    }
-
     .header, #header-items {
         flex-direction: column;
     }
+
+    #dropdown-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    /*
+    .header-top {
+        cursor: pointer;
+    }
+    */
 
     #header-items {
         display: none;

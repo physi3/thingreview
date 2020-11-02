@@ -14,7 +14,10 @@
 </head>
 <body>
     <div class="header">
-        <h1 onclick="toggleHeaderItems();">{% block header %}{% endblock %}</h1>
+        <div class="header-top" onclick="toggleHeaderItems()">
+            <h1>{% block header %}{% endblock %}</h1>
+            <img id="dropdown-icon" src="{% static 'images/dropdown.svg'%}">
+        </div>
         <div id="header-items">
             <a href="{% url 'things:index' %}">Home</a>
             <a href="{% url 'things:things' %}">View All</a>
