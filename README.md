@@ -1,10 +1,10 @@
 # Thing Review
-
-An idea by me (@ollydevulder).
-
-With help from me (@physi3)
-
+A web app that lets people review things.
 Hosted by heroku at [thingreview.xyz](https://thingreview.xyz).
+
+### Contributors
+* [@ollydevulder](https://github.com/ollydevulder) (owner)
+* [@physi3](https://github.com/physi3)
 
 ## Setup
 1. Clone repository

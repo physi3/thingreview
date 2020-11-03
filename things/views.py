@@ -43,6 +43,7 @@ def thing(request, **kwargs):
 
 
 def make_thing(request):
+    form = forms.ThingForm
     if request.method == 'POST':
         form = forms.ThingForm(request.POST)
         if form.is_valid():
@@ -55,7 +56,7 @@ def make_thing(request):
             _thing.save()
             return redirect('things:thing', _thing.id)
     context = {
-        'form': forms.ThingForm,
+        'form': form,
     }
     return render(request, 'things/make_thing.html', context)
 
@@ -68,6 +69,7 @@ def things(request):
 
 
 def review(request, **kwargs):
+    form = forms.ReviewForm
     if _thing := models.Thing.objects.filter(id=kwargs['id']).first():
         if request.method == 'POST':
             form = forms.ReviewForm(request.POST)
@@ -83,7 +85,7 @@ def review(request, **kwargs):
                 return redirect('things:thing', _thing.id)
         context = {
             'thing': _thing,
-            'form': forms.ReviewForm,
+            'form': form
         }
         return render(request, 'things/review.html', context)
     else:
@@ -101,8 +103,8 @@ def random(request):
 def latest(request):
     count = models.Thing.objects.count()
     if count:
-        _thing = models.Thing.objects.all()[count-1].id
-        return redirect('things:thing', _thing)
+        _thing = models.Thing.objects.order_by('-date').first()
+        return redirect('things:thing', _thing.id)
     else:
         return redirect('things:index')
 

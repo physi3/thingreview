@@ -28,8 +28,8 @@ class Thing(models.Model):
     __str__ = __repr__
 
     def save(self, *args, **kwargs):
-        # Capitalize name field.
-        self.name = self.name.capitalize()
+        # Capitalize name field. (first character)
+        self.name = self.name[0].capitalize() + self.name[1:]
 
         super().save(*args, **kwargs)
 
