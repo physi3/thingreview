@@ -1,17 +1,18 @@
 body {
     /* Define global colour variables */
-    --indigo-dye: #134074ff;
+    --indigo-dye: rgb(123, 161, 204);
     --prussian-blue: #13315cff;
     --oxford-blue: #0b2545ff;
-    --cadet-grey: #8da9c4ff;
+    --cadet-grey: rgb(177, 209, 238);
     --mint-cream: #eef4edff;
     --dark-grey: #333;
+    --darker-grey:#222;
+    --near-black: rgb(12, 12, 12);
     --off-white: #f2f2f2;
 
-    margin: 0;
+    background-color: var(--near-black);
+    color: var(--off-white);
 
-    background-color: var(--mint-cream);
-    color: var(--indigo-dye);
 }
 
 /* General tags */
@@ -21,16 +22,16 @@ h1, h2, h3 {
     font-style: italic;
     font-variant: small-caps;
 
-    color: var(--indigo-dye);
+    color: var(--off-white);
 }
 
 a {
     background-color: transparent;
-    color: var(--oxford-blue);
+    color: var(--mint-cream);
 }
 
 a:hover, a:focus {
-    color: var(--prussian-blue);
+    color:var(--indigo-dye);
 }
 
 ul {
@@ -39,14 +40,20 @@ ul {
 
 /* Header */
 
-.header {
+.rounded-box {
     display: flex;
-    margin: 0;
-    justify-content: space-between;
 
     overflow: hidden;
 
     background-color: var(--dark-grey);
+    background-image: linear-gradient(140deg, var(--dark-grey) 0%, var(--darker-grey) 100%);
+
+    margin: 1em;
+    border-radius: 1em;
+}
+
+.header {
+    justify-content: space-between;
 }
 
 #header-items {
@@ -58,7 +65,10 @@ ul {
 .header a {
     margin: 0;
     padding: 1.5em 1.2em;
-    border: none;
+
+    border: solid;
+    border-width: 0 0 0 thin;
+    border-color: var(--off-white);
     
     text-align: center;
     text-decoration: none;
@@ -76,19 +86,55 @@ ul {
 .header a.active {
     background-color: var(--indigo-dye);
     color: white;
-  }
+}
+
+i:hover {
+    background: linear-gradient(90deg, var(--cadet-grey),var(--indigo-dye));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header i:hover {
+    -webkit-text-fill-color: var(--off-white);
+}
 
 .header h1 {
     margin: auto 0;
     padding: 0.4em;
 
     font-size: 2em;
-
     color: var(--off-white);
+}
+
+.header h1:hover {
+    background: linear-gradient(90deg, var(--cadet-grey),var(--indigo-dye));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .header h1 i {
     display: none;
+}
+
+p {
+    margin-left: 1em;
+}
+
+.github-info {
+    display: inline-flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 1em;
+}
+
+.github-info svg{
+    vertical-align: middle;
+    padding: 0.2em;
+}
+
+.github-info path{
+    fill: var(--off-white);
 }
 
 /* On screens smaller than 500px, use dropdown menu for navigation */
@@ -107,6 +153,10 @@ ul {
         cursor: pointer;
     }
 
+    .header a {
+        border: 0;
+    }
+    
     #header-items {
         display: none;
     }

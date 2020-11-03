@@ -2,12 +2,53 @@
 
 {% block header %}Thing Review{% endblock %}
 {% block body %}
-    <p>Welcome to <i>thing</i> review. Here you can give your opinion on <i>things</i>. (review them)</p>
-    <p><br>Here are some cool little ways to discover a new <i>thing</i>.</p>
+    <p>Welcome to <i class="thing-marker">thing</i> review. Here you can give your opinion on <i class="thing-marker">things</i>. (review them)</p>
+    <p><br>Here are some cool little ways to discover a new <i class="thing-marker">thing</i>.</p>
     <ul>
         <li><p><a href="{% url 'things:random' %}">Random thing</a></p></li>
         <li><p><a href="{% url 'things:latest' %}">Most recently created thing</a></p></li>
         <li><p><a href="{% url 'things:least_reviewed' %}">Least reviewed thing</a></p></li>
     </ul>
-    <small class="bottom"><a href="https://github.com/ollydevulder/thingreview" target="_blank">Have a looksie at the code.</a></small>
+
+    <div class="rounded-box github-info">
+        <p><a href="https://github.com/ollydevulder/thingreview" target="_blank">
+        <svg width="32px" height="32px" viewBox="0 0 512 512">
+            <path
+            d="M 400.00,32.00
+            C 400.00,32.00 48.00,32.00 48.00,32.00
+                21.50,32.00 0.00,53.50 0.00,80.00
+                0.00,80.00 0.00,432.00 0.00,432.00
+                0.00,458.50 21.50,480.00 48.00,480.00
+                48.00,480.00 400.00,480.00 400.00,480.00
+                426.50,480.00 448.00,458.50 448.00,432.00
+                448.00,432.00 448.00,80.00 448.00,80.00
+                448.00,53.50 426.50,32.00 400.00,32.00 Z
+            M 277.30,415.70
+            C 268.90,417.20 265.80,412.00 265.80,407.70
+                265.80,402.30 266.00,374.70 266.00,352.40
+                266.00,336.80 260.80,326.90 254.70,321.70
+                291.70,317.60 330.70,312.50 330.70,248.60
+                330.70,230.40 324.20,221.30 313.60,209.60
+                315.30,205.30 321.00,187.60 311.90,164.60
+                298.00,160.30 266.20,182.50 266.20,182.50
+                253.00,178.80 238.70,176.90 224.60,176.90
+                210.50,176.90 196.20,178.80 183.00,182.50
+                183.00,182.50 151.20,160.30 137.30,164.60
+                128.20,187.50 133.80,205.20 135.60,209.60
+                125.00,221.30 120.00,230.40 120.00,248.60
+                120.00,312.20 157.30,317.60 194.30,321.70
+                189.50,326.00 185.20,333.40 183.70,344.00
+                174.20,348.30 149.90,355.70 135.40,330.10
+                126.30,314.30 109.90,313.00 109.90,313.00
+                93.70,312.80 108.80,323.20 108.80,323.20
+                119.60,328.20 127.20,347.40 127.20,347.40
+                136.90,377.10 183.30,367.10 183.30,367.10
+                183.30,381.00 183.50,403.60 183.50,407.70
+                183.50,412.00 180.50,417.20 172.00,415.70
+                106.00,393.60 59.80,330.80 59.80,257.40
+                59.80,165.60 130.00,95.90 221.80,95.90
+                313.60,95.90 388.00,165.60 388.00,257.40
+                388.10,330.80 343.30,393.70 277.30,415.70 Z" />
+        </svg>Have a looksie at the code.</a></p>
+    </div>
 {% endblock %}
