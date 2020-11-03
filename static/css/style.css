@@ -204,6 +204,9 @@ p {
 .thing-letter-container {
     display: flex;
     flex-wrap: wrap;
+    border: solid;
+    border-width: 0 0 thin 0;
+    border-color: var(--dark-grey);
 }
 
 /* Review model classes */
