@@ -1,13 +1,13 @@
 body {
     /* Define global colour variables */
-    --indigo-dye: rgb(123, 161, 204);
+    --indigo-dye: #7ba1cc;
     --prussian-blue: #13315cff;
     --oxford-blue: #0b2545ff;
-    --cadet-grey: rgb(177, 209, 238);
+    --cadet-grey: #b1d1ee;
     --mint-cream: #eef4edff;
     --dark-grey: #333;
     --darker-grey:#222;
-    --near-black: rgb(12, 12, 12);
+    --near-black: #0c0c0c;
     --off-white: #f2f2f2;
 
     background-color: var(--near-black);
