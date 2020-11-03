@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Icon Font';
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+
+    src: url("fonts/icons/icons.eot?#iefix") format("embedded-opentype"),
+         url("fonts/icons/icons.woff2") format("woff2"),
+         url("fonts/icons/icons.woff") format("woff"),
+         url("fonts/icons/icons.ttf") format("truetype"),
+         url("fonts/icons/icons.svg") format("svg");
+}
+
+.icon {
+    display: inline-block;
+    line-height: 1; 
+    padding-right: 0.7em;
+
+    font-family: 'Icon Font';
+    font-weight: 900; 
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+}
+
+ /*
+    Content tags are used so that certain web readers do not show the codes.
+ */
+
+.icon-dropdown:before {
+    content: "\f0d7";
+}
+
+.icon-home:before {
+    content: "\f015";
+}
+
+.icon-all:before {
+    content: "\f0ac";
+}
+  
+.icon-create:before {
+    content: "\f067";
+}
+
+.icon-search:before {
+    content: "\f002";
+}
