@@ -15,7 +15,9 @@
 </head>
 <body>
     <div class="header">
-        <h1 onclick="toggleHeaderItems();">{% block header %}{% endblock %}<i class="icon icon-dropdown"></i></h1>
+        <h1>{% block header %}{% endblock %}
+            <i class="icon icon-dropdown" onclick="toggleHeaderItems()"></i>
+        </h1>
         <div id="header-items">
             <a href="{% url 'things:index' %}"><i class="icon icon-home nav-bar-icon"></i>Home</a>
             <a href="{% url 'things:things' %}"><i class="icon icon-all nav-bar-icon"></i>View All</a>
